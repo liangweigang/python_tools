@@ -8,7 +8,7 @@ import sys
 import datetime
 import codecs
 
-#ÒÑ¾­·ÏÆú
+#
 def getContentOfSingleTiezi():
     #tid = 2378003356
     url = 'http://trading.5173.com/list/viewlastestdeallist.aspx?gm=a36ead01453c40b584f8e1e687723f2d&bt=682b60e289f045339cae13d208023fc6&pg=1&ps=4000'
@@ -28,7 +28,7 @@ def getContentOfSingleTiezi():
             elif i == 1:
                 li = li.replace('<li>','')
                 li = li.replace('</li>','')
-                li = li.replace('ÓÎÏ·/Çø/·þ/ÕóÓª£º½£ÏÀÇéÔµ¢ó/','')
+                li = li.replace('ï¿½ï¿½Ï·/ï¿½ï¿½/ï¿½ï¿½/ï¿½ï¿½Óªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôµï¿½ï¿½/','')
                 it =li
             elif i == 3:
                 li = li.replace('<li class="orange">','')
@@ -37,10 +37,10 @@ def getContentOfSingleTiezi():
                 li = li.replace(',','')
                 it = li
             elif (i == 4) and len(sublist)==7:
-                li = li.replace('Ôª/Í¨±¦','')
+                li = li.replace('Ôª/Í¨ï¿½ï¿½','')
                 a = li.find('orange">')+8
                 b = li.find('</span')
-                it = li[a:b].replace('Ôª/½ð','').replace('Ôª/Í¨±¦','')
+                it = li[a:b].replace('Ôª/ï¿½ï¿½','').replace('Ôª/Í¨ï¿½ï¿½','')
             elif (i==5) and len(sublist)==6:
                 li = li.replace('<li class="in_ac">','')
                 li = li.replace('</li>','')
@@ -79,8 +79,8 @@ def getContentOfSingleDay(startDayStr,endDayStr):
         game_server = sublist[1]
         game_server = game_server.replace('<li>','')
         game_server = game_server.replace('</li>','')
-        game_server = game_server.replace('ÓÎÏ·/Çø/·þ/ÕóÓª£º½£ÏÀÇéÔµ¢ó/','')
-        a = game_server.find('Çø/') + 2
+        game_server = game_server.replace('ï¿½ï¿½Ï·/ï¿½ï¿½/ï¿½ï¿½/ï¿½ï¿½Óªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôµï¿½ï¿½/','')
+        a = game_server.find('ï¿½ï¿½/') + 2
         server1 = game_server[0:a]
       
         server2 = game_server.replace(server1,'')[1:]
@@ -98,7 +98,7 @@ def getContentOfSingleDay(startDayStr,endDayStr):
         
         
         unit_price = sublist[4]
-        unit_price = unit_price.replace('Ôª/Í¨±¦','').replace('Ôª/½ð','')
+        unit_price = unit_price.replace('Ôª/Í¨ï¿½ï¿½','').replace('Ôª/ï¿½ï¿½','')
         a = unit_price.find('orange">')+8
         b = unit_price.find('</span')
         unit_price = unit_price[a:b]

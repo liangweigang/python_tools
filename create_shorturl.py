@@ -3,8 +3,6 @@
 #功能生成短链接
 #注里是单线程跑的。若确实量大的话，可以使用多线程
 
-# this is testing push with vscode git toolkit.
-
 import urllib
 import urllib2
 import re

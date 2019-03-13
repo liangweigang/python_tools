@@ -17,8 +17,6 @@ import datetime
 import codecs
 import argparse
 
-# test user vs code git tools..
-
 class KThread (threading.Thread):
     def __init__(self, nThreadID, ThreadFunc):
         threading.Thread.__init__(self)
